@@ -172,6 +172,8 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_APM_MAX_TPS
+              value: "1"
         process-agent:
           resources:
             limits:
