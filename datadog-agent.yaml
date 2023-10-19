@@ -26,12 +26,12 @@ spec:
     dogstatsd:
       hostPortConfig:
         enabled: true
-        hostPort: 8125
+        hostPort: 28125
     apm:
       enabled: true
       hostPortConfig:
         enabled: true
-        hostPort: 8126
+        hostPort: 28126
     liveContainerCollection:
       enabled: true
     liveProcessCollection:
