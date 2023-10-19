@@ -4,7 +4,7 @@ metadata:
   name: datadog
 spec:
   global:
-    clusterName: 1
+    clusterName: "1"
     logLevel: debug
     site: datadoghq.com
     credentials:
