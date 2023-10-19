@@ -4,7 +4,7 @@ metadata:
   name: datadog
 spec:
   global:
-    clusterName: microk8s
+    clusterName: 1
     logLevel: debug
     site: datadoghq.com
     credentials:
@@ -74,6 +74,8 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_HOSTNAME
+              value: aws-microk8s
     nodeAgent:
       image:
         name: gcr.io/datadoghq/agent:latest-jmx
@@ -161,6 +163,8 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_HOSTNAME
+              value: aws-microk8s
         trace-agent:
           resources:
             limits:
@@ -172,6 +176,8 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_HOSTNAME
+              value: aws-microk8s
         process-agent:
           resources:
             limits:
@@ -183,6 +189,8 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_HOSTNAME
+              value: aws-microk8s
         system-probe:
           resources:
             limits:
@@ -194,3 +202,5 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_HOSTNAME
+              value: aws-microk8s
