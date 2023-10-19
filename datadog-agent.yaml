@@ -76,6 +76,8 @@ spec:
               value: "true"
             - name: DD_HOSTNAME
               value: aws-microk8s
+            - name: DD_TAGS
+              value: "kube_node:aws-microk8s"
     nodeAgent:
       image:
         name: gcr.io/datadoghq/agent:latest-jmx
@@ -165,6 +167,8 @@ spec:
               value: "true"
             - name: DD_HOSTNAME
               value: aws-microk8s
+            - name: DD_TAGS
+              value: "kube_node:aws-microk8s"
         trace-agent:
           resources:
             limits:
@@ -178,6 +182,8 @@ spec:
               value: "true"
             - name: DD_HOSTNAME
               value: aws-microk8s
+            - name: DD_TAGS
+              value: "kube_node:aws-microk8s"
         process-agent:
           resources:
             limits:
@@ -191,6 +197,8 @@ spec:
               value: "true"
             - name: DD_HOSTNAME
               value: aws-microk8s
+            - name: DD_TAGS
+              value: "kube_node:aws-microk8s"
         system-probe:
           resources:
             limits:
@@ -204,3 +212,5 @@ spec:
               value: "true"
             - name: DD_HOSTNAME
               value: aws-microk8s
+            - name: DD_TAGS
+              value: "kube_node:aws-microk8s"
