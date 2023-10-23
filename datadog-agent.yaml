@@ -74,6 +74,12 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_PROXY_HTTP
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_HTTPS
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_NO_PROXY
+              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16"
     nodeAgent:
       image:
         name: gcr.io/datadoghq/agent:latest-jmx
@@ -161,6 +167,12 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_PROXY_HTTP
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_HTTPS
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_NO_PROXY
+              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16"
         trace-agent:
           resources:
             limits:
@@ -172,6 +184,12 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_PROXY_HTTP
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_HTTPS
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_NO_PROXY
+              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16"
         process-agent:
           resources:
             limits:
@@ -183,6 +201,12 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_PROXY_HTTP
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_HTTPS
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_NO_PROXY
+              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16"
         system-probe:
           resources:
             limits:
@@ -194,3 +218,9 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
+            - name: DD_PROXY_HTTP
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_HTTPS
+              value: "http://aws-k8s.ddmasa.com:3128/"
+            - name: DD_PROXY_NO_PROXY
+              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16"
