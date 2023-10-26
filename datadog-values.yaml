@@ -1,0 +1,14 @@
+datadog:
+  apiKeyExistingSecret: datadog-secret
+  appKeyExistingSecret: datadog-secret
+  site: datadoghq.com
+# clusterAgent:
+#   image:
+#     tag: latest
+# agents:
+#   image:
+#     tag: latest
+# clusterChecksRunner:
+#   image:
+#     tag: latest
+    
