@@ -74,12 +74,12 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
-            - name: DD_PROXY_HTTP
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_HTTPS
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_NO_PROXY
-              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
+            # - name: DD_PROXY_HTTP
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_HTTPS
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_NO_PROXY
+            #   value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
     nodeAgent:
       image:
         name: gcr.io/datadoghq/agent:latest-jmx
@@ -167,12 +167,16 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
-            - name: DD_PROXY_HTTP
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_HTTPS
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_NO_PROXY
-              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
+            - name: DD_LOG_FILE_MAX_SIZE
+              value: "100Mb"
+            - name: DD_LOG_FILE_MAX_ROLLS
+              value: "5"
+            # - name: DD_PROXY_HTTP
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_HTTPS
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_NO_PROXY
+            #   value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
         trace-agent:
           resources:
             limits:
@@ -184,12 +188,12 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
-            - name: DD_PROXY_HTTP
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_HTTPS
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_NO_PROXY
-              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
+            # - name: DD_PROXY_HTTP
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_HTTPS
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_NO_PROXY
+            #   value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
         process-agent:
           resources:
             limits:
@@ -201,12 +205,12 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
-            - name: DD_PROXY_HTTP
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_HTTPS
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_NO_PROXY
-              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
+            # - name: DD_PROXY_HTTP
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_HTTPS
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_NO_PROXY
+            #   value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
         system-probe:
           resources:
             limits:
@@ -218,9 +222,9 @@ spec:
           env:
             - name: DD_LOG_PAYLOADS
               value: "true"
-            - name: DD_PROXY_HTTP
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_HTTPS
-              value: "http://aws-k8s.ddmasa.com:3128/"
-            - name: DD_PROXY_NO_PROXY
-              value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
+            # - name: DD_PROXY_HTTP
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_HTTPS
+            #   value: "http://aws-k8s.ddmasa.com:3128/"
+            # - name: DD_PROXY_NO_PROXY
+            #   value: "127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 localhost"
