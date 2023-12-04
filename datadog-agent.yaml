@@ -62,6 +62,20 @@ spec:
                 community_string: "yamaha-rtx3500"
                 port: "161"
                 profile: "yamaha"
+          mysql.yaml: |-
+            cluster_check: true
+            init_config:
+            instances:
+              - dbm: true
+                host: masafumi-kashiwagi-aurora-mysql-instance-1.c3bw7kcbozbg.ap-northeast-1.rds.amazonaws.com
+                port: 3306
+                username: datadog
+                password: datadog
+              - dbm: true
+                host: masafumi-kashiwagi-aurora-mysql-instance-1-ap-northeast-1a.c3bw7kcbozbg.ap-northeast-1.rds.amazonaws.com
+                port: 3306
+                username: datadog
+                password: datadog
       containers:
         cluster-agent:
           resources:
