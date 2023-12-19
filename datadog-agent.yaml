@@ -124,12 +124,12 @@ spec:
         #   } 
       extraConfd:
         configDataMap:
-          jmx.yaml: |-
-            init_config:
-              new_gc_metrics: true
-            instances:
-              - host: 169.254.100.100
-                port: 9012
+          # jmx.yaml: |-
+          #   init_config:
+          #     new_gc_metrics: true
+          #   instances:
+          #     - host: 169.254.100.100
+          #       port: 9012
           http_check.yaml: |-
             init_config:
             instances:
