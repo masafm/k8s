@@ -14,6 +14,11 @@ spec:
     metadata:
       labels:
         app: jmx-test-deplyment
+      annotations:
+        ad.datadoghq.com/jmx-test.logs: >-
+          [{
+            "source": "java"
+          }]    
     spec:
       containers:
       - image: public.ecr.aws/b1o7r7e0/masafumi.kashiwagi/php-fpm:with-ddtracer-4
