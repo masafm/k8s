@@ -33,9 +33,17 @@ spec:
             ]
           }
           }
+        ad.datadoghq.com/nginx.checks: >-
+          {
+          "nginx": {
+            "instances": [{
+            "nginx_status_url": "http://%%host%%:81/nginx_status/"
+            }]
+            }
+          }
     spec:
       containers:
-      - image: public.ecr.aws/b1o7r7e0/masafumi.kashiwagi/php-fpm:with-ddtracer-4
+      - image: public.ecr.aws/b1o7r7e0/masafumi.kashiwagi/php-fpm:20231220-1
         name: php-fpm-with-ddtracer
         resources:
             limits:
@@ -57,10 +65,12 @@ spec:
         #   value: "http://192.168.32.33:8126"
         - name: CURL_COUNT
           value: "2"
+        - name: CURL_TARGET_URL
+          value: "http://localhost:81/nginx_status"
         ports:
         - containerPort: 9000
           name: php-fpm
-      - image: public.ecr.aws/b1o7r7e0/masafumi.kashiwagi/nginx:1
+      - image: public.ecr.aws/b1o7r7e0/masafumi.kashiwagi/nginx:20231220-3
         name: nginx
         resources:
             limits:
@@ -69,6 +79,15 @@ spec:
             requests:
               cpu: "0.5"
               memory: 512Mi
+        env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: DD_ENV
+          value: dev
+        - name: PHP_FPM_ADDR
+          value: localhost:9000
         ports:
         - containerPort: 80
           name: nginx
